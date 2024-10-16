@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+  background-image: url("../imagenes/imagenHome.jpg");
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-size: cover; /* La imagen cubre todo el contenedor, manteniendo la proporción */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3%;
+}
+
+.footer {
+  background-color: #333; /* Color de fondo */
+  color: #fff; /* Texto en blanco */
+  padding: 20px 0; /* Espaciado interno */
+  text-align: center; /* Centrar contenido */
+}

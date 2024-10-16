@@ -1,0 +1,36 @@
+.container {
+  background-color: rgb(236, 244, 241);
+}
+
+.titulo {
+  flex-direction: column;
+  display: flex;
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center;
+  flex-grow: 1;
+  height: 15vh;
+  width: 100%;
+  font-family: "Edu AU VIC WA NT Dots", cursive;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1.5);
+}
+
+.modelsNav {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.modelsNav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+.modelsNav ul li {
+  margin: 0 15px;
+  padding: 20px;
+}
