@@ -1,0 +1,19 @@
+.carouselImg {
+  max-width: 100%; /* Ajusta el ancho máximo a un 70% del contenedor */
+  max-height: 70vh; /* O fija una altura máxima */
+  object-fit: cover; /* Asegura que la imagen no se deforme y mantenga proporciones */
+  border-radius: 250px;
+  width: 100%;
+  background-color: aqua;
+  margin-top: 5px;
+}
+
+.carousel-control {
+  width: 30px; /* Ajusta el ancho de las flechas */
+  height: 30px; /* Ajusta la altura de las flechas */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100%, 100%; /* Ajusta el tamaño de las flechas internas */
+}

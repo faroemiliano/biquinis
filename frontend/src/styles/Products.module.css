@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  padding-top: 0px; /* Añade espacio superior */
+}
+
+/* Estilos para el contenedor del carrusel */
+.carouselContainer {
+  display: flex;
+  justify-content: center; /* Centra el carrusel horizontalmente */
+  width: 100%; /* Hace que el contenedor ocupe todo el ancho disponible */
+  margin-bottom: 20px; /* Añade un margen inferior */
+}
+
+.buttonDelAdd {
+  display: flex;
+  gap: 20px; /* Añade espacio entre los elementos del contenedor */
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #0f9803;
+  border-radius: 50px;
+  padding: 20px;
+  margin-top: 10px;
+  width: 20%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* transition: background-color 0.9s ease-in-out;  */
+}
+
+.card:hover {
+  background-color: #f0f0f0; /* Cambia a un color claro al pasar el mouse */
+
+  box-shadow: 15px 9px rgba(0, 0, 0, 0.7); /* Aumenta la sombra al pasar el mouse */
+  transform: scale(
+    1
+  ); /* Aumenta ligeramente el tamaño (efecto de profundidad) */
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.card p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.selectedCard {
+  border: 5px solid #007bff; /* Cambiar el color del borde cuando esté seleccionado */
+  background-color: rgba(234, 105, 20, 0.1); /* Fondo ligeramente azul */
+}
