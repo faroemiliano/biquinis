@@ -3,6 +3,7 @@ import ProductsList from "../components/ProductList";
 import styles from "../styles/HomePage.module.css";
 import Carousel from "../components/carousel";
 import About from "../components/about";
+import { Link } from "react-router-dom";
 
 const homePage = () => {
   return (

@@ -1,0 +1,71 @@
+.form {
+  width: 100%; /* Ajusta el tamaño del formulario */
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; /* Centra el formulario horizontalmente */
+  padding: 10%; /* Espaciado interior */
+
+  background-position: center; /* Centra la imagen en el contenedor */
+  background-size: cover; /* La imagen cubre todo el contenedor, manteniendo la proporción */
+  background-repeat: no-repeat;
+  background-image: url("../imagenes/fondoAdd.jpeg");
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #64d9f4;
+  border-radius: 20px;
+  width: 40vh;
+  padding-top: 20px;
+}
+
+/* .contentDiv {
+  align-items: center;
+  padding: 3px;
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  font-size: 18px;
+} */
+
+.hiddenInput {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilo para el botón personalizado */
+.customFileButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 18px;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  font-size: 15px;
+}
+
+.customFileButton:hover {
+  background-color: #45a049; /* Cambia el color a un tono más oscuro */
+  transform: scale(1.05); /* Agranda un poco el botón */
+}
+
+/* Efecto al hacer clic (cuando el botón es presionado) */
+.customFileButton:active {
+  background-color: #3e8e41; /* Cambia el color a un tono aún más oscuro */
+  transform: scale(1.1); /* Se agranda ligeramente más al hacer clic */
+}
+
+/* Estilo para el nombre del archivo */
+.fileName {
+  font-size: 13px;
+  color: #f30101;
+  margin-top: 5px;
+}
