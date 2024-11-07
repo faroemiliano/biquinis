@@ -47,27 +47,20 @@ const UpdateProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const data = new FormData();
-    // data.append("name", formData.name);
-    // data.append("price", formData.price);
-    // data.append("size", formData.size);
-    // data.append("description", formData.description);
+    const data = new FormData();
+    data.append("name", formData.name);
+    data.append("price", formData.price);
+    data.append("size", formData.size);
+    data.append("description", formData.description);
 
-    // if (image) {
-    //   data.append("image", image); // Asegúrate de que 'image' contenga un archivo
-    // }
-
-    // // Verificar datos de envío en consola
-    // for (const [key, value] of data.entries()) {
-    //   console.log(key, value);
-    // }
-    console.log(formData);
+    if (image) {
+      data.append("image", image);
+    }
 
     try {
       const response = await axios.patch(
-        // Cambiar a PATCH
         `http://127.0.0.1:8000/api/bikinis/update/${id}/`,
-        formData,
+        data,
         {
           headers: {
             "Content-Type": "multipart/form-data",
@@ -75,7 +68,9 @@ const UpdateProduct = () => {
         }
       );
       console.log("PRODUCTO ACTUALIZADO:", response.data);
-      //   navigate(""); // Redirigir después de actualizar
+
+      // Redirige al home después de la actualización
+      navigate("/"); // Cambia la ruta según tu configuración
     } catch (error) {
       if (error.response) {
         console.error("Error al actualizar el producto:", error.response.data);

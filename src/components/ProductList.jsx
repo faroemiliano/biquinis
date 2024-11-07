@@ -1,10 +1,11 @@
-
 import styles from "../styles/Products.module.css";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 
 const ProductsList = () => {
+  const { isAuthenticated } = useAuth();
   const [products, setProducts] = useState([]);
   const [selectedProducts, setSelectedProducts] = useState(new Set());
   const [productToEdit, setProductToEdit] = useState(null); // Nuevo estado para el producto a editar
@@ -53,7 +54,10 @@ const ProductsList = () => {
         setSelectedProducts(new Set()); // Limpiar selección
       })
       .catch((error) => {
-        console.error("Error deleting products:", error);
+        console.error(
+          "Error deleting products:",
+          error.response ? error.response.data : error.message
+        );
       });
   };
 
@@ -66,21 +70,25 @@ const ProductsList = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.buttonDelAdd}>
-        <Link to="/addProducto">
-          <button>Adicionar Producto</button>
-        </Link>
-        <button
-          onClick={editProduct}
-          disabled={!productToEdit} // Deshabilita el botón si no hay un producto seleccionado para editar
-        >
-          Modificar Producto
-        </button>
-        <button onClick={deleteSelected} disabled={selectedProducts.size === 0}>
-          Eliminar Seleccionados
-        </button>
-      </div>
-
+      {isAuthenticated && (
+        <div className={styles.buttonDelAdd}>
+          <Link to="/addProducto">
+            <button>Adicionar Producto</button>
+          </Link>
+          <button
+            onClick={editProduct}
+            disabled={!productToEdit} // Deshabilita el botón si no hay un producto seleccionado para editar
+          >
+            Modificar Producto
+          </button>
+          <button
+            onClick={deleteSelected}
+            disabled={selectedProducts.size === 0}
+          >
+            Eliminar Seleccionados
+          </button>
+        </div>
+      )}
       <div className={styles.cardContainer}>
         {products.map((product) => (
           <div
@@ -100,7 +108,6 @@ const ProductsList = () => {
           </div>
         ))}
       </div>
-
     </div>
   );
 };
